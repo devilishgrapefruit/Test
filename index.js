@@ -1,4 +1,5 @@
-import express from 'express';
+import express from 'express'
+import dotenv from 'dotenv'
 import mongoose from "mongoose"
 import {registerValidation, loginValidation, updateValidation} from './validations/authValidation.js';
 import {handleValidationErrors, checkAuth, checkAdmin} from './utils/index.js';
@@ -6,12 +7,13 @@ import multer from 'multer';
 import {gameCreateValidation } from './validations/gameValidation.js';
 import {UserController, GameController, CategoryController, OrderController} from './controllers/index.js';
 import cors from 'cors';
-mongoose.connect('mongodb+srv://admin:saz12345@cluster0.99ojmmf.mongodb.net/shop?retryWrites=true&w=majority')
+const PORT = process.env.PORT || 7000;
+const MY_MONGO_URI = process.env.MY_MONGO_URI || 'mongodb+srv://admin:saz12345@cluster0.99ojmmf.mongodb.net/shop?retryWrites=true&w=majority'
+mongoose.connect(MY_MONGO_URI)
 .then(() => console.log('DB OK'))
 .catch((err) => console.log('DB error', err));
-const PORT = process.env.PORT || 7000;
 const app = express();
-
+dotenv.config()
 app.use(express.json());
 app.use(cors());
 const storage = multer.diskStorage({
