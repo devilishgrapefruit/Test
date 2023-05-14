@@ -1,0 +1,394 @@
+
+App {
+  text-align: center;
+  margin: 0;
+	padding: 0;
+}
+
+.box {
+  background-color: #f2f7a472;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: calc(10px + 2vmin);
+  color: rgb(8, 7, 7);
+}
+.container1 {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+  gap: 4em;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Pacifico&family=Press+Start+2P&display=swap');
+
+.header {
+  background: -webkit-linear-gradient(180deg, #002a5a,#0155c1,#8f36c0);
+  background: linear-gradient(180deg, #002a5a,#0155c1,#8f36c0);
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  height: 7em;
+  margin-bottom: 2em;
+  width: 100%;
+    /* position:fixed; */
+  z-index:2;
+  border: 0.3em solid;
+  border-image: linear-gradient(115deg, #000000,#3b198a,#000000) 1;
+  }
+
+.menu, .headermenu{
+    display: inline;
+    padding: 3em;
+    padding-bottom: 1.3em;
+    white-space: nowrap;
+  }  
+  
+.headermenu a { 
+   text-decoration:none;
+    color: white;
+    font-size: 1.3em;
+    -webkit-text-stroke: 0.2mm #000000;
+    letter-spacing: 1mm;
+    font-family: 'Press Start 2P', cursive;
+    font-weight:normal;
+    white-space: nowrap;
+}
+
+.body {
+  background: -webkit-linear-gradient(115deg, #348ea2,#000000,#000000);
+  background: linear-gradient(115deg, #000000,#3b198a,#000000); 
+  color: rgb(248, 249, 251);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+    padding-left: 3%;
+    width: 7em;
+    height: 4em;
+    transition: 0.5s;
+    transition-timing-function: linear;
+}
+.logo:hover{
+    width: 8em;
+    height: 5em;
+}
+
+.logoAuth {
+  width: 9em;
+  height: 8em;
+  transition: 0.5s;
+  transition-timing-function: linear;
+  margin-bottom: 1.5em;
+}
+
+.logoAuth:hover{
+  width: 11em;
+  height: 10em;
+}
+.basketLogo {
+  width: 4em;
+  height: 3em;
+}
+.mytitle{
+    color: white;
+    padding-left: 3em;
+    font-size: 1.7em;
+    letter-spacing: 1mm;
+    font-family: 'Press Start 2P', cursive;
+    font-weight:normal;
+    white-space: nowrap;
+}
+.titleAuth{
+  color: white;
+  font-size: 1.3em;
+  letter-spacing: 1mm;
+  font-family: 'Press Start 2P', cursive;
+  font-weight:normal;
+  white-space: nowrap;
+}
+.cost {
+  color: rgb(0, 0, 0);
+  font-size: 0.7em;
+  letter-spacing: 0.5mm;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: normal;
+  white-space: nowrap;
+}
+.default_text{
+  color: white;
+    padding-left: 3em;
+    font-size: 1em;
+    letter-spacing: 1mm;
+    font-family: 'Press Start 2P', cursive;
+    font-weight:normal;
+    white-space: nowrap;
+}
+h1{
+    color: white;
+    padding-left: 2%;
+    font-size: 2em;
+    font-family: 'Corinthia', cursive;
+    -webkit-text-stroke: 0.2mm #000000;
+    letter-spacing: 2mm;
+    font-size: 30px;
+}
+
+.home{
+  text-decoration:none;
+  color: white;
+  -webkit-text-stroke: 0.2mm #000000;
+}
+
+.footer {
+
+  height: 9em;
+  text-align: center;
+  margin-top: auto; 
+  color: white;
+  font-size: 1em;
+  font-family: 'Trebuchet MS';
+  -webkit-text-stroke: 0.1mm #000000;
+  letter-spacing: 0.4mm;
+  
+}
+
+.sidebar {
+  margin-top: 9em;
+  height: 50%; 
+  width: 160px; 
+  position: fixed; 
+  background-color: #fcefe6; 
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #0f0707;
+  display: block;
+} 
+
+/* Карточка товара */
+.card{
+  background: #348ea2;
+  color: #2B2E4A;
+  transition: 0.5s;
+  transition-timing-function: linear;
+  position: relative;
+  overflow: hidden;
+  display:flex;
+  order: 1;
+}
+.cartText {
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+    font-weight:normal;
+}
+.editButtons {
+  position: absolute;
+  margin-left: 3.5em;
+  top: 0;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+}
+.card:hover{
+  transform: scale(1.1);
+}
+.card:hover .editButtons{
+  opacity: 1;
+}
+.cardImg{
+  display: block;
+}
+/* Блок категории */
+
+.category{
+  color: #2B2E4A;
+  transition: 0.5s;
+  transition-timing-function: linear;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  display:flex;
+  order: 1;
+}
+.editButtonsCategory{
+  position: absolute;
+  margin-left: 4em;
+  top: 0;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+}
+.category:hover .editButtonsCategory{
+  opacity: 1;
+}
+.listcards{
+  /* overflow: auto; */
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  background: -webkit-linear-gradient(115deg, #000000,#000000,#000000);
+  background: linear-gradient(115deg, #000000,#3b198a,#000000); 
+  width: 100%;
+  height:26em;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.categoryCard{
+  width: 50em;
+  margin-right: 2em;
+  border: #3b198a;
+  
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3em;
+  
+}
+
+.notfound{
+  width: 13em;
+  height: 15em;
+}
+
+.cont_image{
+  width: 30em;
+  height: 20em;
+}
+
+.cont_text{
+  color: white;
+  font-size: 1.2em;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight:normal;
+}
+
+.div_text{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.cont_h{
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  -webkit-text-stroke: 0.2mm #000000;
+  letter-spacing: 1mm;
+  font-family: 'Press Start 2P', cursive;
+  font-weight:normal;
+}
+.cont_text{
+  padding-right: 10px;
+  text-indent: 1.5em; 
+  text-align: justify;
+}
+.cont{
+  display: flex;
+  background: -webkit-linear-gradient(115deg, #000000,#000000,#000000);
+  background: linear-gradient(115deg, #000000,#3b198a,#000000); 
+  width: 90%;
+  height: 27em;
+  align-items: center;
+  gap: 2em;
+}
+/* Загрузка */
+.ring
+{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
+  background:transparent;
+  border:3px solid #777efe;
+  border-radius:50%;
+  text-align:center;
+  line-height:150px;
+  font-family:sans-serif;
+  font-size:20px;
+  color:#ffffff;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px #58f0ed;
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+.ring:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #ffffff;
+  border-right:3px solid #ffffff;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+.spanr
+{
+  display:block;
+  position:absolute;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+.spanr:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#2effdc;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #51ff00;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+
+
