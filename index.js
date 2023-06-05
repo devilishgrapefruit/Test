@@ -8,14 +8,14 @@ import {gameCreateValidation } from './validations/gameValidation.js';
 import {UserController, GameController, CategoryController, OrderController} from './controllers/index.js';
 import cors from 'cors';
 const PORT = process.env.PORT || 7000;
-const MY_MONGO_URI = process.env.MY_MONGO_URI || 'mongodb+srv://admin:saz12345@cluster0.99ojmmf.mongodb.net/shop?retryWrites=true&w=majority'
-mongoose.connect(MY_MONGO_URI)
-.then(() => console.log('DB OK'))
-.catch((err) => console.log('DB error', err));
 const app = express();
-dotenv.config()
 app.use(express.json());
 app.use(cors());
+dotenv.config()
+mongoose.connect(process.env.MY_MONGO_URI)
+.then(() => console.log('DB OK'))
+.catch((err) => console.log('DB error', err));
+
 const storage = multer.diskStorage({
     destination: (_, __, cb) => {
         cb(null, 'uploads');
