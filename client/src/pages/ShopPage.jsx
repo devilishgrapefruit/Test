@@ -31,7 +31,7 @@ export const ShopPage = () => {
         <Container>
         <h4 className={classes.titleAuth} styles={{margin: '1em'}}>Наш ассортимент</h4>
         <div className="d-flex justify-content-around gap-4 flex-wrap mt-4" >
-          {(isGamesLoading ? [...Array(5)]: games.items).map((game, index) => 
+          {(isGamesLoading ? [...Array(4)]: games.items).map((game, index) => 
             isGamesLoading ? (
              <Game classaName="d-flex mt-2" key={index} isLoading={true}/>
             ) : (

@@ -40,6 +40,7 @@ export const Game = ({
     const onClickAdd = async () => {
         try {
             dispatch(addOrder(id))
+            alert('Товар добавлен')
         } catch (err) {
             console.warn(err)
             alert('Ошибка при добавлении в корзину')

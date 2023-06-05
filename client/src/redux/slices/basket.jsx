@@ -28,32 +28,32 @@ const basketSlice = createSlice({
     reducers: {},
     extraReducers: {
         [fetchOrder.pending]: (state) => {
-            state.basket.items = null
+            state.basket.items = []
             state.basket.totalCost = 0
             state.basket.status = 'loading'
         },
         [fetchOrder.fulfilled]: (state, action) => {
-            state.basket.items.push(action.payload)
-            state.basket.totalCost = action.payload.totalCost
+            state.basket.items = action.payload
+            state.basket.totalCost = action.payload[0].totalCost
             state.basket.status = 'loaded'
         },
         [fetchOrder.rejected]: (state) => {
-            state.basket.items = null
+            state.basket.items = []
             state.basket.totalCost = 0
             state.basket.status = 'error'
         },
         [addOrder.pending]: (state) => {
-            state.basket.items = null
+            state.basket.items = []
             state.basket.totalCost = 0
             state.basket.status = 'loading'
         },
         [addOrder.fulfilled]: (state, action) => {
-            state.basket.items.push(action.payload)
-            state.basket.totalCost = action.payload.totalCost
+            state.basket.items = action.payload
+            state.basket.totalCost = action.payload[0].totalCost
             state.basket.status = 'loaded'
         },
         [addOrder.rejected]: (state) => {
-            state.basket.items = null
+            state.basket.items = []
             state.basket.totalCost = 0
             state.basket.status = 'error'
         },

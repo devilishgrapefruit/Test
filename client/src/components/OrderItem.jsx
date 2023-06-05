@@ -3,6 +3,7 @@ import { IconButton } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Clear'
 import { useDispatch } from "react-redux"
 import { deleteItem } from "../redux/slices/basket"
+import host from '../axios'
 import { useNavigate } from "react-router-dom"
 export const OrderItem = (
     {id,
@@ -14,8 +15,8 @@ export const OrderItem = (
         const navigate = useNavigate()
         const onClickRemove = () => {
             if (window.confirm('Вы действительно хотите удалить игру из корзины?')) {
-                dispatch(deleteItem(id))
-                navigate('/')
+                host.delete(`/basket/${id}`)
+                navigate('/basket')
             }
           }
 

@@ -19,18 +19,17 @@ export const addToOrder = async (req, res) => {
         const flag = await OrderModel.exists({user: req.userId})
         if (!flag) {
             const doc = new OrderModel({
-                items: [],
+                $push: {items: game},
                 totalCost: 0,
                 user: req.userId,
     
             });
     
-            const order = await doc.save();
+            await doc.save();
         } 
-        
         const order = await OrderModel.findOneAndUpdate(
             {user: req.userId}, 
-            {$push: {items: req.params.id}})
+            {$push: {items: game}})
 
         await order.updateOne({$inc: {totalCost: game.cost}})
         res.json(order);
