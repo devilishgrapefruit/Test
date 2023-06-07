@@ -58,7 +58,11 @@ app.get('/basket', checkAuth, OrderController.getAll)
 app.delete('/basket/:id', checkAuth, OrderController.remove)
 app.post('/basket/:id', checkAuth, OrderController.addToOrder)
 
+router.get('/', function (req, res) {
+    res.send('Server is working...');
+  })
 
+  
 app.listen(PORT, (err) => {
     if (err) {
         return console.log(err);
