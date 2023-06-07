@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const host = axios.create({
-    baseURL: process.env.MY_DEPLOY_SERVER_URI,
+    baseURL: process.env.MY_SERVER_URI,
 })
 
 host.interceptors.request.use((config) => {
