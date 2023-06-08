@@ -26,7 +26,7 @@ export const ManageCategory = ({show, onHide}) => {
             title
         }
         const {data} = isEditing 
-        ? await host.patch(`categories/${id}`, values)
+        ? await host.patch(`/categories/${id}`, values)
         : await dispatch(addCategory(values))
         
         navigate(DEFAULT_ROUTE)
