@@ -16,7 +16,7 @@ export const ManageUser = ({show, onHide}) => {
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [role, setRole] = React.useState('')
-    const [avatarUrl, setAvatarUrl] = React.useState('http://localhost:3000/uploads/avatar.png')
+    const [avatarUrl, setAvatarUrl] = React.useState('https://board-games-kcvd.onrender.com/uploads/avatar.png')
     const [isLoading, setLoading] = React.useState(false)
     const thisUserid = useSelector(userId)
     const {id} = useParams()
@@ -131,7 +131,7 @@ export const ManageUser = ({show, onHide}) => {
                 )}
                 </div>
                 <div>
-                {(avatarUrl && avatarUrl !== 'http://localhost:3000/uploads/avatar.png') && (
+                {(avatarUrl && avatarUrl !== 'https://board-games-kcvd.onrender.com/uploads/avatar.png') && (
                   <img src={avatarUrl} className="mt-4" style={{height: '20em', width: '20em'}} alt="Uploaded"/>
                 )}
                 </div>

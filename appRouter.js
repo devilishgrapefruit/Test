@@ -1,5 +1,6 @@
 import Router from 'express'
 const router = Router()
+import express from 'express';
 import {registerValidation, loginValidation, updateValidation} from './validations/authValidation.js';
 import {handleValidationErrors, checkAuth, checkAdmin} from './utils/index.js';
 import {gameCreateValidation } from './validations/gameValidation.js';
@@ -35,4 +36,21 @@ router.get('/', function (req, res) {
     res.send('Server is working...');
   })
 
+  import multer from 'multer';
+const storage = multer.diskStorage({
+    destination: (_, __, cb) => {
+        cb(null, 'uploads');
+    },
+    filename: (_, file, cb) => {
+        cb(null, file.originalname);
+    },
+});
+const upload = multer({storage});
+router.use('/uploads', express.static('uploads'));
+
+router.post('/upload', checkAuth, upload.single('image'), (req, res) => {
+    res.json({
+        url: `/uploads/${req.file.originalname}`,
+    })
+});
 export default router

@@ -17,7 +17,7 @@ export const ManageGame = ({show, onHide}) => {
     const [cost, setCost] = React.useState(0)
     const [description, setDescription] = React.useState('')
     const [category, setCategory] = React.useState(null)
-    const [imageUrl, setImageUrl] = React.useState('http://localhost:3000/uploads/no-photo.png')
+    const [imageUrl, setImageUrl] = React.useState('https://board-games-kcvd.onrender.com/uploads/no-photo.png')
     const [isLoading, setLoading] = React.useState(false)
     const {id} = useParams()
     const isEditing = Boolean(id)
@@ -31,7 +31,7 @@ export const ManageGame = ({show, onHide}) => {
             const file = event.target.files[0]
             formData.append('image', file)
             const {data} = await host.post('/upload', formData)
-            setImageUrl("http://localhost:7000" + data.url)
+            setImageUrl("https://board-games-kcvd.onrender.com" + data.url)
         } catch (err) {
             console.warn(err)
             alert('Ошибка при загрузке файла')
@@ -146,7 +146,7 @@ export const ManageGame = ({show, onHide}) => {
                 )}
                 </div>
                 <div>
-                {(imageUrl && imageUrl !== 'http://localhost:3000/uploads/no-photo.png') && (
+                {(imageUrl && imageUrl !== 'https://board-games-kcvd.onrender.com/uploads/no-photo.png') && (
                   <img src={imageUrl} className="mt-4" style={{height: '20em', width: '20em'}}alt="Uploaded"/>
                 )}
                 </div>
