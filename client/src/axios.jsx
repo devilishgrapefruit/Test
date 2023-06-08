@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const host = axios.create({
-    baseURL: process.env.MY_SERVER_URI,
+    baseURL: 'https://board-games-kcvd.onrender.com' + '/server',
 })
 
 host.interceptors.request.use((config) => {
