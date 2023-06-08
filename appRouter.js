@@ -50,7 +50,7 @@ router.use('/uploads', express.static('uploads'));
 
 router.post('/upload', checkAuth, upload.single('image'), (req, res) => {
     res.json({
-        url: `/server/uploads/${req.file.originalname}`,
+        url: `/uploads/${req.file.originalname}`,
     })
 });
 export default router
