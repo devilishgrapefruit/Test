@@ -79,7 +79,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
     res.json({
-        url: `/uploads/${req.file.originalname}`,
+        url: `https://board-games-kcvd.onrender.com/uploads/${req.file.originalname}`,
     })
 });
 app.listen(PORT, (err) => {
